@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6>Available Rooms</ion-col>
+                <ion-col col-6><ion-icon ios="ios-settings" md="md-settings" style="float: inline-end; font-size: font-size: 2.4rem;"></ion-icon></ion-col>
+            </ion-row>
+        </ion-grid>
+       
+        
+    </ion-title>  
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card tappable (click)="bookRoom(room)" *ngFor="let room of rooms">
+    <ion-grid>
+      <ion-row>
+          <ion-col col-6><p style="color: white; font-size: 16px;" class="card-title"><ion-icon style="font-size: 18px; color: white;" ios="logo-codepen" md="logo-codepen"></ion-icon> {{room.type}}</p></ion-col>
+          <ion-col col-6><p>
+            <ion-icon name="cash" style="color: white; font-size: 16px;"></ion-icon> 
+            <span style="color: white; font-size: 16px;"><b>{{room.cost_per_night}},000</b> </span>
+            <span style="color: white;">Ugx / Night</span></p></ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-6><ion-icon style="font-size: 18px; color: white;"  name="people"></ion-icon> <span style="color: white; font-size: 16px;"> Beds (<b style="color: #68c91f;">{{room.beds}}</b>) </span> </ion-col>
+        <ion-col col-6><ion-icon  style="font-size: 18px; color: white;" ios="ios-contacts" md="md-contacts"></ion-icon> <span style="color: white; font-size: 16px;"> Max Ocuppancy <b style="color:#f53d3d;">{{room.max_occupancy}}</b></span></ion-col>
+      </ion-row>
+      <button ion-button outline style="background-color: white; border-radius: 20px;">View Room</button>
+    </ion-grid>
+ 
+  </ion-card>
+
+</ion-content>

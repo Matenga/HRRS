@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6> Find a Room</ion-col>
+                <ion-col col-6><ion-icon ios="ios-settings" md="md-settings" style="float: inline-end; font-size: font-size: 2.4rem;"></ion-icon></ion-col>
+            </ion-row>
+        </ion-grid>
+       
+        
+    </ion-title>  
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content padding>
+ <ion-card class="vcard">
+  <ion-card-header>
+    <h2 style="color: #563d7c;"><b>Room Settings</b></h2>
+    <hr>
+  </ion-card-header>
+    <ion-card-content>
+    <ion-list no-lines>
+  
+        <ion-item>
+            <ion-label><ion-icon style="font-size: 18px;" ios="logo-codepen" md="logo-codepen"></ion-icon> Room Type</ion-label>
+            <ion-select [(ngModel)]="roomType">
+                <ion-option value="Single">Single Rooms</ion-option>
+                <ion-option value="Single Standard">Single Standard</ion-option>
+                <ion-option value="Delux">Delux Rooms</ion-option>
+                <ion-option value="Executive">Executive Rooms</ion-option>
+            </ion-select>
+        </ion-item>
+ 
+        <ion-item>
+            <ion-label><ion-icon name="people"></ion-icon> Beds</ion-label>
+            <ion-select style="background-color:#563d7c; width:20%; height:40px; border-radius: 10px; color: white; font-weight: bolder;" [(ngModel)]="beds">
+                <ion-option value="1">1</ion-option>
+                <ion-option value="2">2</ion-option>
+                <ion-option value="3">3</ion-option>
+                <ion-option value="4">4</ion-option>
+                <ion-option value="5">5</ion-option>
+                <ion-option value="6">6</ion-option>
+            </ion-select>
+        </ion-item>
+ 
+        <ion-item>
+            <ion-label> <ion-icon ios="logo-tux" md="logo-tux" style="font-size: 18px;"></ion-icon> Number of People</ion-label>
+            <ion-select style="background-color:#563d7c; width:20%; height:40px; border-radius: 10px; color: white; font-weight: bolder;" [(ngModel)]="guests">
+                <ion-option value="1">1</ion-option>
+                <ion-option value="2">2</ion-option>
+                <ion-option value="3">3</ion-option>
+                <ion-option value="4">4</ion-option>
+                <ion-option value="5">5</ion-option>
+                <ion-option value="6">6</ion-option>
+                <ion-option value="7">7</ion-option>
+                <ion-option value="8">8</ion-option>
+            </ion-select>
+        </ion-item>
+        
+        <h2 style="color: #563d7c;"><b>Checkings</b></h2>
+        <hr>
+        <ion-grid >
+          <ion-row>
+            <ion-col col-6 style="text-align:left;">
+                <ion-label style="color:gray; font-size: 14px;">&nbsp; &nbsp; &nbsp;<ion-icon ios="ios-calendar-outline" md="md-calendar"></ion-icon> Check in:</ion-label>
+              <h2><b><ion-datetime style="color:#563d7c; margin-right: -5px;" displayFormat="DD/MM/YYYY" max="2020-12-31" pickerFormat="DD MM YYYY" [(ngModel)]="from"></ion-datetime></b></h2>
+            </ion-col>
+
+            <ion-col col-6>
+                <ion-label style="color:gray; font-size: 14px;">&nbsp; &nbsp; &nbsp;<ion-icon ios="ios-calendar" md="md-calendar"></ion-icon> Check out:</ion-label>
+              <h2><b><ion-datetime style=" color:#563d7c; margin-left: -5px; border-left: 2px solid gray;" displayFormat="DD/MM/YYYY" max="2020-12-31" pickerFormat="DD MM YYYY" [(ngModel)]="to"></ion-datetime></b></h2>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <h2 style="color: #563d7c;"><b>Pricing</b></h2>
+        <hr>
+        
+
+          <ion-row>
+            <ion-col col-12 >
+              <ion-item>
+                <ion-label><h2 style="color: #563d7c; text-align: left; margin-top: 0px !important;">Your Price Range (Ugx)</h2> <p style="text-align: center; font-size:16px;">({{priceRange.lower}}.000 /= To {{priceRange.upper}}.000 /=)</p></ion-label> &nbsp;
+              <ion-range style="padding: 0px !important;" max="500" dualKnobs="true" pin="true" [(ngModel)]="priceRange">
+              </ion-range>
+            </ion-item>
+            </ion-col>
+          </ion-row>
+      
+
+        
+
+        <button (click)="findRooms()" ion-button full color="primary" style="border-radius: 5px;">Find a Room</button>
+ 
+    </ion-list>
+</ion-card-content>
+</ion-card>
+ 
+</ion-content>

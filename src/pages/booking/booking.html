@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6>Quotation</ion-col>
+                <ion-col col-6><ion-icon ios="ios-more" md="md-more" style="float: inline-end; font-size: font-size: 2.4rem;"></ion-icon></ion-col>
+            </ion-row>
+        </ion-grid>
+       
+        
+    </ion-title>  
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+<ion-card style="background-color: white;">
+  <ion-card-header>
+    <span class="card-head-color">{{room.type}} Room Mini Quotation</span>
+  </ion-card-header>
+  <hr>
+
+  <ion-card-content>
+     <img class="header" src="http://placehold.it/500x500"/>
+  <hr>
+
+  <h2 style="color: #563d7c;"><b>Services</b></h2>
+  <hr>
+
+   <ion-row style="background-color: #f1f1f5; margin-right: -21px; margin-left: -20px;     border-bottom: 1px solid rgba(86,61,124,.1); ">
+
+    <ion-col col-3 style="text-align:center;">
+      <ion-icon ios="ios-wifi" md="md-wifi" style="font-size: 30px; color:#563d7c;"></ion-icon>
+      <h6 style="color: gray;">Free Wifi</h6>
+    </ion-col>
+
+    <ion-col col-3 style="text-align:center;">
+      <ion-icon ios="ios-cafe" md="md-cafe" style="font-size: 30px; color:#563d7c;"></ion-icon>
+      <h6 style="color: gray;">Break Fast</h6>
+    </ion-col>
+
+    <ion-col col-3 style="text-align:center;">
+      <ion-icon ios="ios-desktop" md="md-desktop" style="font-size: 30px; color:#563d7c;"></ion-icon>
+      <h6 style="color: gray;">DSTV</h6>
+    </ion-col>
+
+    <ion-col col-3 style="text-align:center;">
+      <ion-icon ios="ios-partly-sunny" md="md-partly-sunny" style="font-size: 30px; color:#563d7c;"></ion-icon>
+      <h6 style="color: gray;">Swimming Pool</h6>
+    </ion-col>
+  </ion-row>
+  <ion-list>
+
+    <ion-item>
+       <ion-icon ios="ios-calendar-outline" md="md-calendar" style="color: gray;"></ion-icon> <strong style="color: gray;">Check In:</strong> 
+       <span style="float:right; margin-top: -16px; color: gray;"><b>{{checkIn}}</b></span>
+    </ion-item>
+
+    <ion-item>
+       <ion-icon ios="ios-calendar-outline" md="md-calendar" style="color: gray;"></ion-icon> <strong style="color: gray;">Check Out:</strong> 
+       <span style="float:right; margin-top: -16px; color: gray;"><b>{{checkOut}}</b></span>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon ios="logo-tux" md="logo-tux" style="color: gray;"></ion-icon> <strong style="color: gray;">Guests:</strong> 
+      <span style="float:right; margin-top: -16px; color: gray;"><b>{{details.guests}}</b> </span>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon ios="logo-tux" md="logo-tux" style="color: gray;"></ion-icon> <strong style="color: gray;">Number of Beds:</strong> 
+      <span style="float:right; margin-top: -16px; color: gray;"><b>{{details.beds}}</b> </span>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="cash" style="color: gray;"></ion-icon > <strong style="color: gray;">Cost Per Night:</strong> 
+      <span style="float:right; margin-top: -16px; color: gray;"><b>{{room.cost_per_night}},000 Ugx</b></span>
+    </ion-item>
+
+    <ion-item>
+      <button (click)="openQuote()" ion-button full color="primary" style="border-radius: 5px;">Book Room Now</button>
+    </ion-item>
+  </ion-list>
+</ion-card-content>
+</ion-card>
+</ion-content>

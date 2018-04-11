@@ -1,0 +1,69 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+      <!--<button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" style="align-items: left;">
+        <ion-icon style="font-size:  25px; color: #563d7c;" name="{{p.Icon}}"></ion-icon> 
+        <span style="color: gray; text-align: left; padding-left: 50px; margin-top:0px !important;" float-left><b>{{p.title}}</b></span>
+      </button>
+
+    <ion-list>
+		<ion-item menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+		       <ion-icon style="font-size:  25px; color: #563d7c; display: flex;" name="{{p.Icon}}"><span style="color: gray; font-size: 18px; padding-left: 25px; float: left; justify-content: flex-start;" float-left><b>{{p.title}}</b></span></ion-icon>
+		</ion-item>
+	</ion-list>-->
+
+    <ion-list>
+      <button ion-item (click)="openPage(HomePage)">
+        <ion-icon ios="ios-home" md="md-home" style="font-size:  25px; color: #563d7c;"></ion-icon> <span style="color: gray; padding-left: 20px; font-size: 16px;">Home</span>
+      </button>
+      <button ion-item (click)="openPage(friendsPage)">
+      	<ion-icon ios="ios-moon" md="md-moon" style="font-size:  25px; color: #563d7c;"></ion-icon> 
+      	<span style="color: gray; padding-left: 20px; font-size: 16px;">Rooms</span>
+      </button>
+      <button ion-item (click)="openPage(eventsPage)">
+      	<ion-icon ios="ios-restaurant" md="md-restaurant" style="font-size:  25px; color: #563d7c;"></ion-icon>
+      	<span style="color: gray; padding-left: 20px; font-size: 16px;">Restaurant</span>
+      </button>
+      <button ion-item (click)="closeMenu()">
+      	<ion-icon ios="ios-cafe" md="md-cafe" style="font-size:  25px; color: #563d7c;"></ion-icon>
+      	<span style="color: gray; padding-left: 17px; font-size: 16px;">Breakfast</span>
+      </button>
+
+      <button ion-item (click)="closeMenu()">
+      	<ion-icon ios="ios-wine" md="md-wine" style="font-size:  25px; color: #563d7c;"></ion-icon>
+      	<span style="color: gray; padding-left: 30px; font-size: 16px;">Bar</span>
+      </button>
+
+      <button ion-item (click)="closeMenu()">
+        <ion-icon ios="ios-help-circle" md="md-help-circle" style="font-size:  25px; color: #563d7c;"></ion-icon>
+       <span style="color: gray; padding-left: 20px; font-size: 16px;">Help</span>
+      </button>
+
+      <button ion-item (click)="closeMenu()">
+        <ion-icon ios="ios-settings" md="md-settings" style="font-size:  25px; color: #563d7c;"></ion-icon>
+        <span style="color: gray; padding-left: 20px; font-size: 16px;">Settings</span>
+      </button>
+
+      <button ion-item (click)="closeMenu()">
+        <ion-icon ios="ios-information-circle" md="md-information-circle" style="font-size:  25px; color: #563d7c;"></ion-icon>
+        <span style="color: gray; padding-left: 20px; font-size: 16px;">About Us</span>
+      </button>
+
+      <button ion-item (click)="closeMenu()">
+        <ion-icon ios="ios-log-out" md="md-log-out" style="font-size:  25px; color: #563d7c;"></ion-icon>
+        <span style="color: gray; padding-left: 20px; font-size: 16px;">Sign Out</span>
+      </button>
+    </ion-list>
+
+
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

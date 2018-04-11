@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Hotel Desert Breeze</ion-title>
+
+    <button ion-button menuToggle end>
+       <ion-icon ios="ios-notifications-outline" md="md-notifications-outline"></ion-icon>
+    </button>
+
+    <button ion-button menuToggle end>
+         <ion-icon ios="ios-cog" md="md-cog"></ion-icon>
+    </button>    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid >
+  <ion-row>
+    <ion-col col-12 style="text-align:center;">
+      <ion-img width="100%" height="100%" src="assets/imgs/logo1.png"></ion-img>.
+    </ion-col>
+  </ion-row>   
+  <ion-row style="background-color: #f1f1f5; margin-right: -21px; margin-left: -20px;     border-bottom: 1px solid rgba(86,61,124,.1); ">
+
+    <ion-col col-3 style="text-align:center;">
+      <ion-icon ios="ios-wifi" md="md-wifi" style="font-size: 30px; color:#563d7c;"></ion-icon>
+      <h6 style="color: gray;">Wifi</h6>
+    </ion-col>
+
+    <ion-col col-3 style="text-align:center;">
+      <ion-icon ios="ios-wine" md="md-wine" style="font-size: 30px; color:#563d7c;"></ion-icon>
+      <h6 style="color: gray;">Bar</h6>
+    </ion-col>
+
+    <ion-col col-3 style="text-align:center;">
+      <ion-icon ios="ios-tennisball" md="md-tennisball" style="font-size: 30px; color:#563d7c;"></ion-icon>
+      <h6 style="color: gray;">Gym</h6>
+    </ion-col>
+
+    <ion-col col-3 style="text-align:center;">
+      <ion-icon ios="ios-water" md="md-water" style="font-size: 30px; color:#563d7c;"></ion-icon>
+      <h6 style="color: gray;">Pool</h6>
+    </ion-col>
+  </ion-row>
+  <hr>
+
+  <ion-row>
+     <ion-col col-6 style="text-align:center;">
+      <button (click)="openSearch()" class="butt">
+      <ion-card class="card">
+        <ion-card-content>
+          <ion-icon ios="ios-medal" md="md-medal" style="font-size: 39px; color:white;"></ion-icon>
+          <hr>
+          <b><h3 style="color: white;">Rooms</h3></b>
+        </ion-card-content>
+      </ion-card>   
+      </button>    
+     </ion-col>
+
+     <ion-col col-6 style="text-align:center;">
+      <button (click)="openSearch()" class="butt">
+      <ion-card class="card">
+        <ion-card-content>
+          <ion-icon ios="ios-ice-cream" md="md-ice-cream" style="font-size: 39px; color:white;"></ion-icon>
+          <hr>
+          <b><h3 style="color: white;">Restaurant</h3></b>
+        </ion-card-content>
+      </ion-card> 
+      </button>      
+     </ion-col>
+  </ion-row>
+
+   <ion-row>
+     <ion-col col-6 style="text-align:center;">
+      <button (click)="openSearch()" class="butt">
+      <ion-card class="card">
+        <ion-card-content>
+          <ion-icon ios="ios-easel" md="md-easel" style="font-size: 39px; color:white;"></ion-icon>
+          <hr>
+          <b><h3 style="color: white;">Conference <br/>Rooms</h3></b>
+        </ion-card-content>
+      </ion-card>       
+    </button>
+     </ion-col>
+
+     <ion-col col-6 style="text-align:center;">
+      <button (click)="openSearch()" class="butt">
+      <ion-card class="card">
+        <ion-card-content>
+          <ion-icon ios="ios-boat" md="md-boat" style="font-size: 39px; color:white;"></ion-icon>
+          <hr>
+          <b><h3 style="color: white;">Trip <br/>Activities</h3></b>
+        </ion-card-content>
+      </ion-card>     
+      </button>  
+     </ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-content>
