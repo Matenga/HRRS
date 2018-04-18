@@ -1,0 +1,55 @@
+<ion-content padding>
+<!--<ion-card style="background-color: white; margin: 0px !important; width: 100%; padding: 10px; border-radius: 4px;">-->
+
+  <ion-grid>
+  <ion-row>
+    <ion-col col-12>
+      <ion-img src="assets/imgs/logo1.png"></ion-img>
+    </ion-col>
+  </ion-row> 
+
+   <ion-row>
+    <ion-col col-12 style="text-align:center;">
+      <h2 style="color:gray; font-weight:bold;">Hotel Desert Breeze</h2>
+      <hr>
+    </ion-col>
+  </ion-row> 
+  </ion-grid>
+  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+    <ion-item>
+      <ion-label stacked style="color:gray; font-size:13px;"> <ion-icon ios="ios-mail" md="md-mail"></ion-icon> <b>Email</b></ion-label>
+      <ion-input #email formControlName="email" type="email" placeholder="Your email address"
+        [class.invalid]="!loginForm.controls.email.valid &&
+          loginForm.controls.email.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  &&
+      loginForm.controls.email.dirty">
+      <p style="color:red;">Please enter a valid email.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked style="color:gray; font-size:13px;"><ion-icon ios="ios-lock" md="md-lock"></ion-icon> <b>Password</b></ion-label>
+      <ion-input #password formControlName="password" type="password" placeholder="Your password"
+        [class.invalid]="!loginForm.controls.password.valid &&
+          loginForm.controls.password.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  &&
+      loginForm.controls.password.dirty">
+      <p style="color:red;">Your password needs more than 6 characters.</p>
+    </ion-item>
+
+    <button ion-button block clear (click)="goToResetPassword()">
+      Forgot Password? Reset It
+    </button>
+
+    <button ion-button block type="submit">Login</button>
+
+    <button ion-button block clear (click)="createAccount()">
+      Dont Have an account? Sign Up
+    </button>
+
+  </form>
+
+<!--</ion-card>-->
+
+</ion-content>
